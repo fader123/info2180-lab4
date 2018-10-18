@@ -3,6 +3,7 @@ function allevents() {
 let first=document.getElementById('boundary1');
 let walls=document.querySelectorAll('#maze > .boundary');
 let start=document.getElementById('start');
+let head=document.getElementById('status');
 let num=0;
 
 start.addEventListener('click',reset);
@@ -18,19 +19,22 @@ function lose(){
         walls[x].classList.add('youlose');
      }
     num=1;
+    head.textContent='You Lose';
 }
    
 function win(){
     //console.log(num);
     if (num===0){
-        alert('You win!');
+        head.textContent='You Win';
     }
+    
 }
 function reset(){
     for (let x=0;x<walls.length;x++){
         walls[x].classList.remove('youlose');
      }
     num=0;
+    head.textContent='Move your mouse over the "S" to begin.';
 }
 
 }
