@@ -4,6 +4,7 @@ let first=document.getElementById('boundary1');
 let walls=document.querySelectorAll('#maze > .boundary');
 let start=document.getElementById('start');
 let head=document.getElementById('status');
+let maze=document.getElementById('maze');
 let num=0;
 
 start.addEventListener('click',reset);
@@ -35,6 +36,7 @@ function reset(){
      }
     num=0;
     head.textContent='Move your mouse over the "S" to begin.';
+    maze.addEventListener('mouseleave',lose);
 }
 
 }
